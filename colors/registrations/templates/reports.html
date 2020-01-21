@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block report %}
+    <h2> Users Report</h2>
+
+    {% for report in registrationList %}
+    <div class="databorder">
+        <label> Name : {{report.firstName}} {{report.lastName}}</label>
+        <br />
+        <label> Email : {{report.email}}</label>
+        <br />
+        <label> Phone Number : {{report.phoneNumber}}</label>
+        <br />
+        <label> Birthday : {{report.birthday}}</label>
+        </div>
+    {% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+                {% block registration-form %}
+                    <h2 class="title">Registration Form</h2>
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group input-group-lg">
+                                        <label class="label">First Name</label>
+                                        {{form.firstName}}
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group input-group-lg">
+                                        <label class="label">Last Name</label>
+                                        {{form.lastName}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group input-group-lg">
+                                        <label class="label">Birthday</label>
+                                        {{form.birthday}}
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group input-group-lg">
+                                        <label class="label">Gender</label>
+                                            <div class="genderAndRadio-spacing">
+                                                <label class="radio-container m-r-45">Male
+                                                {{form.is_male}}
+                                                </label>
+                                                <label class="radio-container">Female
+                                                {{form.is_female}}
+                                                </label>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group input-group-lg">
+                                        <label class="label">Email:</label>
+                                        {{form.email}}
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group input-group-lg">
+                                        <label class="label">Phone Number</label>
+                                        {{form.phoneNumber}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                                <label class="label">Subject</label>
+                                <div class="form-group input-group-lg">
+                                    {{form.subject}}
+                                </div>
+                            </div>
+                            <div class="">
+                                    <div class="submit text-left p-t-15">
+                                        <button type="submit" class="btn btn-primary buttonsize">Submit</button>
+                                    </div>
+                            </div>
+                        </form>
+                {% endblock %}
